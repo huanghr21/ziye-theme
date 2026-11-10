@@ -1,0 +1,839 @@
+/*
+ Blue Notes · 鲸蓝 — v1.0.0
+Copyright (c) 2026 Purple Theme Studio contributors
+SPDX-License-Identifier: MIT
+
+Typora: copy this file into the theme folder, restart, then select it.
+MPE: paste this file's contents into Customize CSS → style.less.
+Web: load this file and add class="markdown-body" to rendered Markdown.
+No imports, external fonts, images, JavaScript, or companion files required.
+Edit the shared color and typography tokens below to customize the theme.
+ */
+
+.markdown-body,
+.markdown-preview.markdown-preview,
+#write {
+  --purple-background: #fbfdff;
+  --purple-text: #303d4b;
+  --purple-muted: #6b7d8e;
+  --purple-accent: #3c75a6;
+  --purple-heading: #315f87;
+  --purple-code-bg: #eef4f9;
+  --purple-border: #dce7f0;
+  --purple-quote-bg: #edf5fb;
+  --purple-quote-border: #759ec1;
+  --purple-checkbox-bg: #f0f5fa;
+  --purple-checkmark: #ffffff;
+  --purple-stripe: #f4f8fc;
+  --purple-selection: #d1dfeb;
+  --purple-body-font: "Inter", "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --purple-heading-font: "Inter", "Noto Sans SC", "Noto Sans CJK SC", "Source Han Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --purple-code-font: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 836px;
+  margin: 0 auto;
+  padding: 44px 38px 72px;
+  color: var(--purple-text);
+  background: var(--purple-background);
+  font-family: var(--purple-body-font);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.9;
+  letter-spacing: 0px;
+  text-align: left;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color-scheme: light;
+}
+
+.markdown-body *,
+.markdown-preview.markdown-preview *,
+#write *,
+.markdown-body *::before,
+.markdown-preview.markdown-preview *::before,
+#write *::before,
+.markdown-body *::after,
+.markdown-preview.markdown-preview *::after,
+#write *::after {
+  box-sizing: border-box;
+}
+
+.markdown-body ::selection,
+.markdown-preview.markdown-preview ::selection,
+#write ::selection {
+  color: var(--purple-text);
+  background: var(--purple-selection);
+}
+
+.markdown-body > :first-child,
+.markdown-preview.markdown-preview > :first-child,
+#write > :first-child { margin-top: 0; }
+.markdown-body > :last-child,
+.markdown-preview.markdown-preview > :last-child,
+#write > :last-child { margin-bottom: 0; }
+
+/* A steady reading rhythm. */
+.markdown-body p,
+.markdown-preview.markdown-preview p,
+#write p {
+  margin: 0 0 1.05em;
+  line-height: inherit;
+}
+
+.markdown-body h1,
+.markdown-preview.markdown-preview h1,
+#write h1,
+.markdown-body h2,
+.markdown-preview.markdown-preview h2,
+#write h2,
+.markdown-body h3,
+.markdown-preview.markdown-preview h3,
+#write h3,
+.markdown-body h4,
+.markdown-preview.markdown-preview h4,
+#write h4,
+.markdown-body h5,
+.markdown-preview.markdown-preview h5,
+#write h5,
+.markdown-body h6,
+.markdown-preview.markdown-preview h6,
+#write h6 {
+  color: var(--purple-heading);
+  font-family: var(--purple-heading-font);
+  font-weight: 650;
+  line-height: 1.4;
+  letter-spacing: -0.015em;
+  overflow-wrap: break-word;
+  scroll-margin-top: 24px;
+}
+
+.markdown-body h1,
+.markdown-preview.markdown-preview h1,
+#write h1 {
+  position: relative;
+  margin: 0 0 0.85em;
+  padding: 0 0 calc(0.44em + 4px);
+  border: 0;
+  font-size: 2.05em;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+/* A rounded rule that also remains visible when print backgrounds are off. */
+.markdown-body h1::after,
+.markdown-preview.markdown-preview h1::after,
+#write h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  border: 2px solid var(--purple-accent);
+  border-radius: 999px;
+  background: var(--purple-accent);
+  pointer-events: none;
+}
+
+.markdown-body h2,
+.markdown-preview.markdown-preview h2,
+#write h2 {
+  position: relative;
+  background: transparent;
+  margin: 1.9em 0 0.85em;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font-size: 1.48em;
+  padding: 0.08em 0 calc(0.44em + 1px) calc(0.65em + 4px);
+}
+
+/* The marker has four rounded corners; the rule joins its lower end. */
+.markdown-body h2::before,
+.markdown-preview.markdown-preview h2::before,
+#write h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  border: 2px solid var(--purple-accent);
+  border-radius: 999px;
+  background: var(--purple-accent);
+  pointer-events: none;
+}
+.markdown-body h2::after,
+.markdown-preview.markdown-preview h2::after,
+#write h2::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  border: 0;
+  border-bottom: 1px solid var(--purple-accent);
+  pointer-events: none;
+}
+
+
+.markdown-body h3,
+.markdown-preview.markdown-preview h3,
+#write h3 {
+  margin: 1.62em 0 0.7em;
+  padding: 0 0 0.44em;
+  border: 0;
+  border-bottom: 1px solid var(--purple-accent);
+  font-size: 1.21em;
+  text-decoration: none;
+}
+
+.markdown-body h4,
+.markdown-preview.markdown-preview h4,
+#write h4 { margin: 1.5em 0 0.6em; font-size: 1.08em; }
+.markdown-body h5,
+.markdown-preview.markdown-preview h5,
+#write h5 { margin: 1.4em 0 0.55em; font-size: 1em; }
+.markdown-body h6,
+.markdown-preview.markdown-preview h6,
+#write h6 { margin: 1.4em 0 0.55em; font-size: 0.94em; color: var(--purple-muted); }
+
+.markdown-body strong,
+.markdown-preview.markdown-preview strong,
+#write strong { color: inherit; font-weight: 650; }
+.markdown-body em,
+.markdown-preview.markdown-preview em,
+#write em { font-style: italic; }
+.markdown-body del,
+.markdown-preview.markdown-preview del,
+#write del { color: var(--purple-muted); }
+.markdown-body small,
+.markdown-preview.markdown-preview small,
+#write small { font-size: 0.86em; }
+.markdown-body mark,
+.markdown-preview.markdown-preview mark,
+#write mark { color: var(--purple-text); background: var(--purple-selection); padding: 0.08em 0.2em; border-radius: 3px; }
+
+.markdown-body a,
+.markdown-preview.markdown-preview a,
+#write a {
+  color: var(--purple-accent);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+  text-decoration-color: #92b2ce;
+  overflow-wrap: anywhere;
+}
+
+.markdown-body a:hover,
+.markdown-preview.markdown-preview a:hover,
+#write a:hover { text-decoration: underline; text-decoration-color: currentColor; }
+.markdown-body a:focus-visible,
+.markdown-preview.markdown-preview a:focus-visible,
+#write a:focus-visible { outline: 2px solid var(--purple-accent); outline-offset: 3px; border-radius: 2px; }
+
+/* Lists keep hierarchy visible without opening large gaps. */
+.markdown-body ul,
+.markdown-preview.markdown-preview ul,
+#write ul { list-style-type: disc; }
+.markdown-body ol,
+.markdown-preview.markdown-preview ol,
+#write ol { list-style-type: decimal; }
+.markdown-body ul,
+.markdown-preview.markdown-preview ul,
+#write ul,
+.markdown-body ol,
+.markdown-preview.markdown-preview ol,
+#write ol {
+  margin: 0 0 1.05em;
+  padding-left: 1.65em;
+}
+
+.markdown-body li,
+.markdown-preview.markdown-preview li,
+#write li { margin: 0.26em 0; padding-left: 0.25em; }
+.markdown-body li::marker,
+.markdown-preview.markdown-preview li::marker,
+#write li::marker { color: var(--purple-accent); }
+.markdown-body li > p,
+.markdown-preview.markdown-preview li > p,
+#write li > p { margin: 0.3em 0; }
+.markdown-body li > ul,
+.markdown-preview.markdown-preview li > ul,
+#write li > ul,
+.markdown-body li > ol,
+.markdown-preview.markdown-preview li > ol,
+#write li > ol { margin: 0.35em 0 0.45em; }
+.markdown-body ul ul,
+.markdown-preview.markdown-preview ul ul,
+#write ul ul { list-style-type: circle; }
+.markdown-body ul ul ul,
+.markdown-preview.markdown-preview ul ul ul,
+#write ul ul ul { list-style-type: square; }
+.markdown-body .task-list-item,
+.markdown-preview.markdown-preview .task-list-item,
+#write .task-list-item,
+.markdown-body .md-task-list-item,
+.markdown-preview.markdown-preview .md-task-list-item,
+#write .md-task-list-item { list-style-type: none; }
+.markdown-body .task-list-item input[type="checkbox"],
+.markdown-preview.markdown-preview .task-list-item input[type="checkbox"],
+#write .task-list-item input[type="checkbox"],
+.markdown-body input.task-list-item-checkbox,
+.markdown-preview.markdown-preview input.task-list-item-checkbox,
+#write input.task-list-item-checkbox,
+.markdown-body .md-task-list-item > input[type="checkbox"],
+.markdown-preview.markdown-preview .md-task-list-item > input[type="checkbox"],
+#write .md-task-list-item > input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-grid;
+  place-content: center;
+  width: 1em;
+  height: 1em;
+  padding: 0;
+  margin: 0 0.55em 0 -1.3em;
+  border: 1.5px solid var(--purple-quote-border);
+  border-radius: 0.24em;
+  background: var(--purple-checkbox-bg);
+  color: var(--purple-checkmark);
+  font: inherit;
+  accent-color: var(--purple-accent);
+  vertical-align: -0.12em;
+  opacity: 1;
+  filter: none;
+}
+
+.markdown-body .task-list-item input[type="checkbox"]::before,
+.markdown-preview.markdown-preview .task-list-item input[type="checkbox"]::before,
+#write .task-list-item input[type="checkbox"]::before,
+.markdown-body input.task-list-item-checkbox::before,
+.markdown-preview.markdown-preview input.task-list-item-checkbox::before,
+#write input.task-list-item-checkbox::before,
+.markdown-body .md-task-list-item > input[type="checkbox"]::before,
+.markdown-preview.markdown-preview .md-task-list-item > input[type="checkbox"]::before,
+#write .md-task-list-item > input[type="checkbox"]::before { content: none; }
+.markdown-body .task-list-item input[type="checkbox"]::after,
+.markdown-preview.markdown-preview .task-list-item input[type="checkbox"]::after,
+#write .task-list-item input[type="checkbox"]::after,
+.markdown-body input.task-list-item-checkbox::after,
+.markdown-preview.markdown-preview input.task-list-item-checkbox::after,
+#write input.task-list-item-checkbox::after,
+.markdown-body .md-task-list-item > input[type="checkbox"]::after,
+.markdown-preview.markdown-preview .md-task-list-item > input[type="checkbox"]::after,
+#write .md-task-list-item > input[type="checkbox"]::after {
+  content: "";
+  width: 0.28em;
+  height: 0.5em;
+  border: solid currentColor;
+  border-width: 0 0.12em 0.12em 0;
+  transform: translateY(-0.06em) rotate(45deg);
+  opacity: 0;
+}
+.markdown-body .task-list-item input[type="checkbox"]:checked,
+.markdown-preview.markdown-preview .task-list-item input[type="checkbox"]:checked,
+#write .task-list-item input[type="checkbox"]:checked,
+.markdown-body input.task-list-item-checkbox:checked,
+.markdown-preview.markdown-preview input.task-list-item-checkbox:checked,
+#write input.task-list-item-checkbox:checked,
+.markdown-body .md-task-list-item > input[type="checkbox"]:checked,
+.markdown-preview.markdown-preview .md-task-list-item > input[type="checkbox"]:checked,
+#write .md-task-list-item > input[type="checkbox"]:checked {
+  border-color: var(--purple-accent);
+  background: var(--purple-accent);
+}
+.markdown-body .task-list-item input[type="checkbox"]:checked::after,
+.markdown-preview.markdown-preview .task-list-item input[type="checkbox"]:checked::after,
+#write .task-list-item input[type="checkbox"]:checked::after,
+.markdown-body input.task-list-item-checkbox:checked::after,
+.markdown-preview.markdown-preview input.task-list-item-checkbox:checked::after,
+#write input.task-list-item-checkbox:checked::after,
+.markdown-body .md-task-list-item > input[type="checkbox"]:checked::after,
+.markdown-preview.markdown-preview .md-task-list-item > input[type="checkbox"]:checked::after,
+#write .md-task-list-item > input[type="checkbox"]:checked::after { opacity: 1; }
+.markdown-body .task-list-item input[type="checkbox"]:focus-visible,
+.markdown-preview.markdown-preview .task-list-item input[type="checkbox"]:focus-visible,
+#write .task-list-item input[type="checkbox"]:focus-visible,
+.markdown-body input.task-list-item-checkbox:focus-visible,
+.markdown-preview.markdown-preview input.task-list-item-checkbox:focus-visible,
+#write input.task-list-item-checkbox:focus-visible,
+.markdown-body .md-task-list-item > input[type="checkbox"]:focus-visible,
+.markdown-preview.markdown-preview .md-task-list-item > input[type="checkbox"]:focus-visible,
+#write .md-task-list-item > input[type="checkbox"]:focus-visible {
+  outline: 2px solid var(--purple-accent);
+  outline-offset: 3px;
+}
+@media (forced-colors: active) {
+  .markdown-body .task-list-item input[type="checkbox"],
+.markdown-preview.markdown-preview .task-list-item input[type="checkbox"],
+#write .task-list-item input[type="checkbox"],
+.markdown-body input.task-list-item-checkbox,
+.markdown-preview.markdown-preview input.task-list-item-checkbox,
+#write input.task-list-item-checkbox,
+.markdown-body .md-task-list-item > input[type="checkbox"],
+.markdown-preview.markdown-preview .md-task-list-item > input[type="checkbox"],
+#write .md-task-list-item > input[type="checkbox"] { appearance: auto; background: revert; border: revert; }
+  .markdown-body .task-list-item input[type="checkbox"]::after,
+.markdown-preview.markdown-preview .task-list-item input[type="checkbox"]::after,
+#write .task-list-item input[type="checkbox"]::after,
+.markdown-body input.task-list-item-checkbox::after,
+.markdown-preview.markdown-preview input.task-list-item-checkbox::after,
+#write input.task-list-item-checkbox::after,
+.markdown-body .md-task-list-item > input[type="checkbox"]::after,
+.markdown-preview.markdown-preview .md-task-list-item > input[type="checkbox"]::after,
+#write .md-task-list-item > input[type="checkbox"]::after { content: none; }
+}
+
+/* Quotations and callouts. */
+.markdown-body blockquote,
+.markdown-preview.markdown-preview blockquote,
+#write blockquote {
+  margin: 1.4em 0;
+  padding: 1em 1.25em;
+  border: 0;
+  border-left: 3px solid var(--purple-quote-border);
+  border-radius: 8px;
+  color: var(--purple-text);
+  background: var(--purple-quote-bg);
+  font-style: normal;
+}
+
+.markdown-body blockquote > :last-child,
+.markdown-preview.markdown-preview blockquote > :last-child,
+#write blockquote > :last-child { margin-bottom: 0; }
+.markdown-body blockquote > :first-child,
+.markdown-preview.markdown-preview blockquote > :first-child,
+#write blockquote > :first-child { margin-top: 0; }
+.markdown-body blockquote blockquote,
+.markdown-preview.markdown-preview blockquote blockquote,
+#write blockquote blockquote { margin: 0.8em 0; }
+.markdown-body blockquote cite,
+.markdown-preview.markdown-preview blockquote cite,
+#write blockquote cite { color: var(--purple-muted); font-size: 0.9em; }
+.markdown-body .markdown-alert,
+.markdown-preview.markdown-preview .markdown-alert,
+#write .markdown-alert { margin: 1.4em 0; padding: 1em 1.25em; background: var(--purple-quote-bg); border-left: 3px solid var(--purple-accent); border-radius: 0 6px 6px 0; }
+.markdown-body .markdown-alert-title,
+.markdown-preview.markdown-preview .markdown-alert-title,
+#write .markdown-alert-title { color: var(--purple-heading); font-weight: 650; }
+
+/* Inline code and fenced blocks have separate spacing. */
+.markdown-body code,
+.markdown-preview.markdown-preview code,
+#write code,
+.markdown-body kbd,
+.markdown-preview.markdown-preview kbd,
+#write kbd,
+.markdown-body samp,
+.markdown-preview.markdown-preview samp,
+#write samp,
+.markdown-body pre,
+.markdown-preview.markdown-preview pre,
+#write pre {
+  font-family: var(--purple-code-font);
+  font-variant-ligatures: none;
+}
+
+.markdown-body :not(pre) > code,
+.markdown-preview.markdown-preview :not(pre) > code,
+#write :not(pre) > code {
+  padding: 0.16em 0.38em;
+  border: 0;
+  border-radius: 4px;
+  color: var(--purple-accent);
+  background: var(--purple-code-bg);
+  font-size: 0.86em;
+  white-space: break-spaces;
+  overflow-wrap: anywhere;
+}
+
+.markdown-body pre,
+.markdown-preview.markdown-preview pre,
+#write pre {
+  display: block;
+  margin: 1.4em 0;
+  padding: 1.2em 1.35em;
+  border: 1px solid var(--purple-border);
+  border-radius: 8px;
+  color: var(--purple-text);
+  background: var(--purple-code-bg);
+  font-size: 0.86em;
+  line-height: 1.75;
+  letter-spacing: 0;
+  overflow-x: auto;
+  overflow-wrap: normal;
+  tab-size: 2;
+  -moz-tab-size: 2;
+}
+
+.markdown-body pre code,
+.markdown-preview.markdown-preview pre code,
+#write pre code {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+  font-size: 1em;
+  line-height: inherit;
+  white-space: pre;
+  overflow-wrap: normal;
+  word-break: normal;
+  text-shadow: none;
+}
+
+.markdown-body kbd,
+.markdown-preview.markdown-preview kbd,
+#write kbd {
+  padding: 0.14em 0.4em;
+  border: 1px solid var(--purple-border);
+  border-bottom-width: 2px;
+  border-radius: 4px;
+  color: var(--purple-text);
+  background: var(--purple-code-bg);
+  font-size: 0.82em;
+}
+
+/* Soft syntax accents work with Prism and highlight.js output. */
+.markdown-body .token.comment,
+.markdown-preview.markdown-preview .token.comment,
+#write .token.comment,
+.markdown-body .token.prolog,
+.markdown-preview.markdown-preview .token.prolog,
+#write .token.prolog,
+.markdown-body .token.doctype,
+.markdown-preview.markdown-preview .token.doctype,
+#write .token.doctype,
+.markdown-body .hljs-comment,
+.markdown-preview.markdown-preview .hljs-comment,
+#write .hljs-comment { color: var(--purple-muted); font-style: italic; }
+.markdown-body .token.keyword,
+.markdown-preview.markdown-preview .token.keyword,
+#write .token.keyword,
+.markdown-body .token.atrule,
+.markdown-preview.markdown-preview .token.atrule,
+#write .token.atrule,
+.markdown-body .token.tag,
+.markdown-preview.markdown-preview .token.tag,
+#write .token.tag,
+.markdown-body .hljs-keyword,
+.markdown-preview.markdown-preview .hljs-keyword,
+#write .hljs-keyword,
+.markdown-body .hljs-selector-tag,
+.markdown-preview.markdown-preview .hljs-selector-tag,
+#write .hljs-selector-tag { color: var(--purple-accent); }
+.markdown-body .token.string,
+.markdown-preview.markdown-preview .token.string,
+#write .token.string,
+.markdown-body .token.attr-value,
+.markdown-preview.markdown-preview .token.attr-value,
+#write .token.attr-value,
+.markdown-body .hljs-string,
+.markdown-preview.markdown-preview .hljs-string,
+#write .hljs-string { color: #547b55; }
+.markdown-body .token.function,
+.markdown-preview.markdown-preview .token.function,
+#write .token.function,
+.markdown-body .token.class-name,
+.markdown-preview.markdown-preview .token.class-name,
+#write .token.class-name,
+.markdown-body .hljs-title,
+.markdown-preview.markdown-preview .hljs-title,
+#write .hljs-title { color: var(--purple-heading); }
+.markdown-body .token.number,
+.markdown-preview.markdown-preview .token.number,
+#write .token.number,
+.markdown-body .token.boolean,
+.markdown-preview.markdown-preview .token.boolean,
+#write .token.boolean,
+.markdown-body .hljs-number,
+.markdown-preview.markdown-preview .hljs-number,
+#write .hljs-number,
+.markdown-body .hljs-literal,
+.markdown-preview.markdown-preview .hljs-literal,
+#write .hljs-literal { color: #98683d; }
+.markdown-body .token.operator,
+.markdown-preview.markdown-preview .token.operator,
+#write .token.operator,
+.markdown-body .token.punctuation,
+.markdown-preview.markdown-preview .token.punctuation,
+#write .token.punctuation { color: var(--purple-text); background: transparent; }
+
+/* Tables stay scrollable when a document contains many columns. */
+.markdown-body table,
+.markdown-preview.markdown-preview table,
+#write table {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.4em 0;
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: 0.92em;
+  line-height: 1.65;
+  overflow-x: auto;
+}
+
+.markdown-body th,
+.markdown-preview.markdown-preview th,
+#write th,
+.markdown-body td,
+.markdown-preview.markdown-preview td,
+#write td {
+  padding: 0.75em 1em;
+  border: 1px solid var(--purple-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.markdown-body th,
+.markdown-preview.markdown-preview th,
+#write th { color: var(--purple-heading); background: var(--purple-code-bg); font-weight: 650; }
+.markdown-body tbody tr,
+.markdown-preview.markdown-preview tbody tr,
+#write tbody tr { background: var(--purple-background); }
+.markdown-body tbody tr:nth-child(even),
+.markdown-preview.markdown-preview tbody tr:nth-child(even),
+#write tbody tr:nth-child(even) { background: var(--purple-stripe); }
+.markdown-body td > :last-child,
+.markdown-preview.markdown-preview td > :last-child,
+#write td > :last-child,
+.markdown-body th > :last-child,
+.markdown-preview.markdown-preview th > :last-child,
+#write th > :last-child { margin-bottom: 0; }
+.markdown-body caption,
+.markdown-preview.markdown-preview caption,
+#write caption { color: var(--purple-muted); padding: 0.6em; font-size: 0.9em; text-align: left; }
+
+.markdown-body hr,
+.markdown-preview.markdown-preview hr,
+#write hr {
+  height: 0;
+  margin: 2.4em 0;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid var(--purple-border);
+  background: transparent;
+}
+
+.markdown-body img,
+.markdown-preview.markdown-preview img,
+#write img,
+.markdown-body video,
+.markdown-preview.markdown-preview video,
+#write video { max-width: 100%; height: auto; border-radius: 5px; }
+.markdown-body figure,
+.markdown-preview.markdown-preview figure,
+#write figure { margin: 1.6em 0; }
+.markdown-body figcaption,
+.markdown-preview.markdown-preview figcaption,
+#write figcaption { margin-top: 0.6em; color: var(--purple-muted); font-size: 0.85em; text-align: center; }
+.markdown-body details,
+.markdown-preview.markdown-preview details,
+#write details { margin: 1.2em 0; padding: 0.9em 1.1em; border: 1px solid var(--purple-border); border-radius: 6px; }
+.markdown-body summary,
+.markdown-preview.markdown-preview summary,
+#write summary { color: var(--purple-heading); font-weight: 600; cursor: pointer; }
+.markdown-body details[open] > summary,
+.markdown-preview.markdown-preview details[open] > summary,
+#write details[open] > summary { margin-bottom: 0.8em; }
+
+/* Footnotes, definitions, and math retain the document's rhythm. */
+.markdown-body sup,
+.markdown-preview.markdown-preview sup,
+#write sup,
+.markdown-body sub,
+.markdown-preview.markdown-preview sub,
+#write sub { font-size: 0.75em; line-height: 0; position: relative; vertical-align: baseline; }
+.markdown-body sup,
+.markdown-preview.markdown-preview sup,
+#write sup { top: -0.5em; }
+.markdown-body sub,
+.markdown-preview.markdown-preview sub,
+#write sub { bottom: -0.2em; }
+.markdown-body .footnotes,
+.markdown-preview.markdown-preview .footnotes,
+#write .footnotes,
+.markdown-body .footnotes-area,
+.markdown-preview.markdown-preview .footnotes-area,
+#write .footnotes-area { margin-top: 2.6em; color: var(--purple-muted); font-size: 0.85em; }
+.markdown-body .footnotes p,
+.markdown-preview.markdown-preview .footnotes p,
+#write .footnotes p,
+.markdown-body .footnotes-area p,
+.markdown-preview.markdown-preview .footnotes-area p,
+#write .footnotes-area p { margin-bottom: 0.5em; }
+.markdown-body .footnote-ref,
+.markdown-preview.markdown-preview .footnote-ref,
+#write .footnote-ref,
+.markdown-body .footnote-backref,
+.markdown-preview.markdown-preview .footnote-backref,
+#write .footnote-backref,
+.markdown-body .md-footnote,
+.markdown-preview.markdown-preview .md-footnote,
+#write .md-footnote { color: var(--purple-accent); }
+.markdown-body dl,
+.markdown-preview.markdown-preview dl,
+#write dl { margin: 1.2em 0; }
+.markdown-body dt,
+.markdown-preview.markdown-preview dt,
+#write dt { margin-top: 0.8em; color: var(--purple-heading); font-weight: 650; }
+.markdown-body dd,
+.markdown-preview.markdown-preview dd,
+#write dd { margin: 0.35em 0 0.8em 1.5em; }
+.markdown-body .katex-display,
+.markdown-preview.markdown-preview .katex-display,
+#write .katex-display,
+.markdown-body .math-display,
+.markdown-preview.markdown-preview .math-display,
+#write .math-display,
+.markdown-body .md-math-block,
+.markdown-preview.markdown-preview .md-math-block,
+#write .md-math-block { margin: 1.5em 0; padding: 0.35em 0; overflow-x: auto; overflow-y: hidden; }
+.markdown-body .katex,
+.markdown-preview.markdown-preview .katex,
+#write .katex { font-size: 1.08em; }
+.markdown-body mjx-container[display="true"],
+.markdown-preview.markdown-preview mjx-container[display="true"],
+#write mjx-container[display="true"] { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+.markdown-body .mermaid,
+.markdown-preview.markdown-preview .mermaid,
+#write .mermaid { margin: 1.5em 0; text-align: center; overflow-x: auto; }
+.markdown-body .mermaid svg,
+.markdown-preview.markdown-preview .mermaid svg,
+#write .mermaid svg { max-width: 100%; height: auto; }
+
+@media (max-width: 640px) {
+  .markdown-body,
+.markdown-preview.markdown-preview,
+#write { padding: 28px 22px 48px; }
+  .markdown-body h1,
+.markdown-preview.markdown-preview h1,
+#write h1 { font-size: 2em; }
+  .markdown-body pre,
+.markdown-preview.markdown-preview pre,
+#write pre { padding: 1em; }
+  .markdown-body th,
+.markdown-preview.markdown-preview th,
+#write th,
+.markdown-body td,
+.markdown-preview.markdown-preview td,
+#write td { padding: 0.65em 0.75em; }
+}
+
+/* Typora editing adapters (CodeMirror, task markers, and footnote UI). */
+#write .md-fences {
+  margin: 1.4em 0;
+  padding: 1em 1.2em;
+  border: 1px solid var(--purple-border);
+  border-radius: 8px;
+  background: var(--purple-code-bg);
+  color: var(--purple-text);
+  font-family: var(--purple-code-font);
+  font-size: 0.86em;
+  line-height: 1.75;
+}
+#write .md-fences .CodeMirror,
+#write .md-fences .CodeMirror-gutters { color: var(--purple-text); background: transparent; }
+#write .md-fences .CodeMirror { font-family: var(--purple-code-font); font-size: inherit; line-height: inherit; }
+#write .md-fences .CodeMirror pre { margin: 0; padding: 0 4px; border: 0; border-radius: 0; background: transparent; font-size: inherit; line-height: inherit; overflow: visible; }
+#write .md-fences .CodeMirror-linenumber { color: var(--purple-muted); }
+#write .md-fences .CodeMirror-cursor { border-left-color: var(--purple-text); }
+#write .md-fences .CodeMirror-selected { background: var(--purple-selection); }
+#write .cm-s-inner .cm-comment { color: var(--purple-muted); }
+#write .cm-s-inner .cm-keyword,
+#write .cm-s-inner .cm-atom { color: var(--purple-accent); }
+#write .cm-s-inner .cm-string { color: #547b55; }
+#write .cm-s-inner .cm-number { color: #98683d; }
+#write .cm-s-inner .cm-def { color: var(--purple-heading); }
+#write .md-meta,
+#write .md-tag { color: var(--purple-muted); }
+#write .md-task-list-item > input { margin-left: -1.5em; accent-color: var(--purple-accent); }
+#write .md-footnote { background: var(--purple-code-bg); border-radius: 3px; padding: 0 0.2em; }
+#write .md-toc { margin: 1.5em 0; padding: 1.2em; border: 1px solid var(--purple-border); border-radius: 6px; }
+#write .md-toc-content { color: var(--purple-text); }
+#write .md-toc a { color: var(--purple-muted); text-decoration: none; }
+#write .md-toc a:hover { color: var(--purple-accent); text-decoration: underline; }
+
+/* Typora canvas; screen-only so printing keeps the 11pt text size below.
+   :where preserves low specificity for Typora's own font-size preference.
+   Older engines without :has retain the common 16px document default. */
+
+@supports selector(html:has(#write)) {
+  @media screen {
+    html:where(:has(#write)) { font-size: 16px; }
+    body:where(:has(#write)) { background-color: #fbfdff; }
+    #write { font-size: 1rem; }
+  }
+}
+
+@media print {
+  .markdown-body,
+.markdown-preview.markdown-preview,
+#write {
+    --purple-background: #ffffff;
+    --purple-text: #222222;
+    --purple-muted: #555555;
+    --purple-accent: #315f87;
+    --purple-heading: #243b4f;
+    --purple-code-bg: #f1f5f8;
+    --purple-border: #d5dfe7;
+    --purple-quote-bg: #f4f8fb;
+    --purple-quote-border: #87a5bd;
+    --purple-checkbox-bg: #f4f8fb;
+    --purple-checkmark: #ffffff;
+    --purple-stripe: #f6f8fa;
+    max-width: none;
+    padding: 0;
+    color: var(--purple-text);
+    background: var(--purple-background);
+    font-size: 11pt;
+  }
+  .markdown-body h1,
+.markdown-preview.markdown-preview h1,
+#write h1,
+.markdown-body h2,
+.markdown-preview.markdown-preview h2,
+#write h2,
+.markdown-body h3,
+.markdown-preview.markdown-preview h3,
+#write h3,
+.markdown-body h4,
+.markdown-preview.markdown-preview h4,
+#write h4 { break-after: avoid; }
+  .markdown-body pre,
+.markdown-preview.markdown-preview pre,
+#write pre,
+.markdown-body blockquote,
+.markdown-preview.markdown-preview blockquote,
+#write blockquote,
+.markdown-body figure,
+.markdown-preview.markdown-preview figure,
+#write figure,
+.markdown-body tr,
+.markdown-preview.markdown-preview tr,
+#write tr { break-inside: avoid; }
+  .markdown-body p,
+.markdown-preview.markdown-preview p,
+#write p,
+.markdown-body li,
+.markdown-preview.markdown-preview li,
+#write li { orphans: 3; widows: 3; }
+  .markdown-body pre,
+.markdown-preview.markdown-preview pre,
+#write pre { white-space: pre-wrap; }
+  .markdown-body pre code,
+.markdown-preview.markdown-preview pre code,
+#write pre code { white-space: pre-wrap; overflow-wrap: anywhere; }
+  .markdown-body pre code span,
+.markdown-preview.markdown-preview pre code span,
+#write pre code span { color: inherit; }
+  .markdown-body table,
+.markdown-preview.markdown-preview table,
+#write table { display: table; overflow: visible; }
+}
