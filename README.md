@@ -29,7 +29,7 @@
 
 ### VS Code · Markdown Preview Enhanced
 
-运行 `Markdown Preview Enhanced: Customize CSS`，备份已有样式后，将所选 CSS 的完整内容粘贴进 `style.less`，保存并刷新预览。
+运行 `Markdown Preview Enhanced: Customize CSS`，备份已有样式后，将所选 CSS 的完整内容粘贴进 `style.less`，保存并刷新预览。正文默认随预览窗口伸缩，并保留两侧留白。
 
 ### Markdown 网页
 
@@ -37,7 +37,7 @@
 
 ## 自定义
 
-直接修改 CSS 开头的颜色变量、字体、`font-size`、`line-height` 和 `max-width`，即可调整配色与阅读密度。公式、图表等扩展语法由所用编辑器解析。
+直接修改 CSS 开头的颜色变量、字体、`font-size` 和 `line-height`，即可调整配色与阅读密度。MPE 行宽由文件末尾的 `max-width` 控制，默认 `none`；Typora 和网页的最大行宽在文件开头设置。公式、图表等扩展语法由所用编辑器解析。
 
 ## 致谢与许可
 

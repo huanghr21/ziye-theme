@@ -837,3 +837,16 @@ Edit the shared color and typography tokens below to customize the theme.
 .markdown-preview.markdown-preview table,
 #write table { display: table; overflow: visible; }
 }
+
+/* MPE screen layout: follow the preview width and match the page background. */
+@media screen {
+  .markdown-preview.markdown-preview {
+    max-width: none;
+  }
+  body.preview-container {
+    background-color: #fefdfb;
+    color: #383442;
+    font-size: 16px;
+    color-scheme: light;
+  }
+}
